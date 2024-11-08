@@ -1,0 +1,30 @@
+<%-include("partials/header.ejs") %>
+
+<div class="create-form">
+  <form action="/submit" method="post">
+   <div>
+    <label for="exampleFormControlInput1" class="form-label">Book Title</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Example Power of laws" name="title">
+   </div>
+   <div>
+    <label for="exampleFormControlInput1" class="form-label">Book Rating</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Between 1 to 10" name="rate">
+   </div>
+   <div>
+    <label for="exampleFormControlInput1" class="form-label">Start Reading Date</label>
+    <input type="date" class="form-control" id="exampleFormControlInput1" name="date">
+   </div>
+   <div>
+    <label for="exampleFormControlInput1" class="form-label">Book Cover</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ISBN Code" name="cover" >
+   </div>
+   <div>
+    <label for="exampleFormControlTextarea1" class="form-label">Book Notes</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Writing your notes here" name="notes"></textarea>
+   </div>
+   <div class="submit_btn">
+     <button  type="submit" class="btn btn-primary" >Submit</button>
+   </div>
+    
+  </form>
+</div>

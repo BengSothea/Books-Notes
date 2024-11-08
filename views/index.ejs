@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+      <%-include("partials/header.ejs") %>
+
+      <% books.forEach(book =>{%>
+       <div class="container-content">
+           <div class="content1">
+              <div>
+               <img src="<%= book.bookcover%>">
+              </div>
+              <div>
+                <h2><%= book.booktitle %></h2>
+                <p class="bookInformation">Read Date: <%= book.readdate %></p>
+                <p class="bookInformation">My Rate <%= book.bookrate%>/10</p> 
+              </div>
+           </div>
+           <div class="contain2">
+              <p id="notes<%= book.id %>"><%= book.booknote%></p>
+              <form>
+               <textarea id="input<%= book.id %>" class="full-width-input" type="text" name="updatedBook" autocomplete="off" 
+               autofocus="on" hidden="true" ><%= book.booknote %></textarea>
+              </form>
+           </div>
+           <div class="button">
+            <form action="/delete" method="post">
+             <input type="hidden" name="bookId" value="<%= book.id %>">
+             <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+            <button  type="button" onclick="handler('<%=book.id%>')" class="btn btn-primary" id="update<%= book.id %>">Update</button>
+            <form action="/update" method="post">
+                <input type="hidden" name="updatedBookId" value="<%= book.id %>">
+                <input type="hidden" name="newNote" id="newNote<%= book.id %>">
+                <button id="done<%= book.id %>" type="submit" onclick="updateNote('<%= book.id %>')" class="btn btn-primary"  hidden="true">Done</button>
+            </form>
+           </div>
+       </div>
+       <% }); %>
+
+       <script>
+
+        function handler(id){
+          const notesParagraph = document.getElementById("notes"+id);
+          const inputField = document.getElementById("input"+id);
+
+          inputField.style.width = notesParagraph.offsetWidth +'px';
+          inputField.style.height = notesParagraph.offsetHeight +'px';
+
+
+          document.getElementById("update" + id).setAttribute("hidden", true)
+          document.getElementById("notes" + id).setAttribute("hidden", true)
+          document.getElementById("input" + id).removeAttribute("hidden")
+          document.getElementById("done" + id).removeAttribute("hidden")
+        }
+       
+       function updateNote(id){
+        const textArea = document.getElementById('input'+id);
+        const hiddenInput = document.getElementById('newNote'+id);
+        hiddenInput.value = textArea.value;
+       }
+
+      </script>
+
+</body>
+</html>

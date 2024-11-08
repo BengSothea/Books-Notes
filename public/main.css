@@ -1,0 +1,109 @@
+body{
+    background-color:black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.container-content{
+    display: flex;
+    flex-direction: column;
+    width: 32rem;
+    height: auto;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.content1{
+    display: flex;
+    flex-direction: row;
+}
+
+
+img{
+    width: 150px;
+    height: 200px;
+}
+
+h2{
+    margin-top: 0;
+    margin-left: 20px;
+    color: white;
+}
+
+.button{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.bookInformation{
+    margin-left: 20px;
+}
+
+p{  
+    font-size: 1rem;
+    color: whitesmoke;
+    overflow-wrap: break-word;
+    margin-bottom: 0;
+}
+
+
+
+.containerHeader{
+    width: 100%;
+}
+
+.create-form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+@media (max-width: 537px){
+   .create-form{
+    width: 300px;
+   }
+   .container-content{
+    width: 325px;
+   }
+}
+
+
+
+
+.full-width-input{
+        background-color: transparent;  /* Makes the textarea background transparent */
+        /* or you can use */
+        background: transparent;
+        
+        /* Other useful properties */
+        border: none;
+        outline: none;
+        resize: none;
+        width: 100%;
+        height: auto;
+        font-family: inherit;
+        font-size: 1rem;
+        line-height: inherit;
+        overflow: hidden;
+
+        color: whitesmoke;
+        padding: 0;
+        box-sizing: border-box;
+}
+
+.content2{
+    width: 100%;
+    height: auto;
+}
+
+.submit_btn{
+    margin-top: 1rem;
+}
+.fs-4{
+    color: skyblue;
+}
